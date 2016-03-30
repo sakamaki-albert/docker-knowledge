@@ -3,7 +3,7 @@
 FROM tomcat:jre8
 
 # ==== dumb-init ====
-ADD https://github.com/Yelp/dumb-init/releases/download/v1.0.0/dumb-init_1.0.0_amd64 \
+ADD https://github.com/Yelp/dumb-init/releases/download/v1.0.1/dumb-init_1.0.1_amd64 \
       /usr/local/bin/dumb-init
 
 # ==== environment ====
@@ -12,7 +12,7 @@ RUN rm -rf /usr/local/tomcat/webapps/ROOT \
   && chmod +x /usr/local/bin/dumb-init
 
 # ==== add Knowledge ====
-ADD https://github.com/support-project/knowledge/releases/download/v1.1.0/knowledge.war \
+ADD https://github.com/support-project/knowledge/releases/download/v1.2.1/knowledge.war \
       /usr/local/tomcat/webapps/ROOT.war
 
 VOLUME [ "/root/.knowledge" ]
